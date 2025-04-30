@@ -165,10 +165,26 @@
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
-        </ul>
+            <li>
+              Filtering to show only pro-life states with a negative % change in clinics
+              <ul>
+                <li>Score: -1.5</li>
+                <li>I produced a more targeted and eye-catching visual narrative by narrowing down the statistics to only include pro-life states with a negative percentage change in abortion clinics. This made the message of my visualization more direct and easy to convey. I think doing that did a good job of showing a clear linear relationship, however, it also had me sacrificing other data points from pro-life states.</li>
+              </ul>
+            </li>
+            <li>Provocative title framing ("State Restrictions Don't Stop Women")
+                <ul>
+                    <li>Score: -1</li>
+                    <li>This title was intentionally made to arouse strong reactions and implied causality ("don't stop women") without explicitly proving it. The way the title is framed pushes viewers toward a certain interpretation before they even read the axes.</li>
+                </ul>
+            </li>
+            <li>Encoding bubble size with % of residents traveling out of state for care
+                <ul>
+                    <li>Score: 1</li>
+                    <li> I intentionally increased the size_max parameter to make bubbles representing high travel percentages appear more dramatic. This exaggeration visually emphasizes the burden on women in certain states. While the data is accurate, the large bubbles suggest a greater disparity. I considered doing a scatter plot and also leaving the bubble sizes as is, I considered using proportionate scaling, but it felt visually underwhelming and didn't communicate the message as well.</li>
+                </ul>
+            </li>
+          </ul>
       </section>
 
       <section>
