@@ -169,19 +169,25 @@
               Filtering to show only pro-life states with a negative % change in clinics
               <ul>
                 <li>Score: -1.5</li>
-                <li>I produced a more targeted and eye-catching visual narrative by narrowing down the statistics to only include pro-life states with a negative percentage change in abortion clinics. This made the message of my visualization more direct and easy to convey. I think doing that did a good job of showing a clear linear relationship, however, it also had me sacrificing other data points from pro-life states.</li>
+                <li>I produced a more targeted and eye-catching visual narrative by narrowing down the statistics to only include pro-life states with a negative percentage change in abortion clinics. This made the message of my visualization more direct and made it seem as if clinic closures were the sole cause to more people traveling for abortions. I think doing that did a good job of showing a clear linear relationship, however, it also had me sacrificing other data points from pro-life states. I attempted this without the filtering, but got a plot that did not have as much impact as a result.</li>
               </ul>
             </li>
             <li>Provocative title framing ("State Restrictions Don't Stop Women")
                 <ul>
                     <li>Score: -1</li>
-                    <li>This title was intentionally made to arouse strong reactions and implied causality ("don't stop women") without explicitly proving it. The way the title is framed pushes viewers toward a certain interpretation before they even read the axes.</li>
+                    <li>This title was intentionally made to arouse strong reactions and implied causality ("don't stop women") without explicitly proving it. The way the title is framed pushes viewers toward a certain interpretation before they even read the axes. I considered using a more neutral title like “Out-of-State Abortion Travel and Clinic Availability”, but felt that would reduce the visual’s persuasive impact.</li>
                 </ul>
             </li>
-            <li>Encoding bubble size with % of residents traveling out of state for care
+            <li>Exaggerating bubble size to amplify the % of residents traveling out of state
                 <ul>
-                    <li>Score: 1</li>
+                    <li>Score: 0.5</li>
                     <li> I intentionally increased the size_max parameter to make bubbles representing high travel percentages appear more dramatic. This exaggeration visually emphasizes the burden on women in certain states. While the data is accurate, the large bubbles suggest a greater disparity. I considered doing a scatter plot and also leaving the bubble sizes as is, I considered using proportionate scaling, but it felt visually underwhelming and didn't communicate the message as well.</li>
+                </ul>
+            </li>
+            <li>Decreasing the width of the visualization
+                <ul>
+                    <li>Score: -0.5</li>
+                    <li> Decreasing the width of this plot makes increases the impact of each bubble since it would make each one take up more area, while also making that data seem less sparse. Doing this also makes the slope of the data seem stronger, which implies to the viewer a stronger correlation between the axes. Trying to achieve the same effect, I also tried to manipulate the numbering of the axes, but decided against it since I thought it would make the deception too obvious.</li>
                 </ul>
             </li>
           </ul>
@@ -198,16 +204,46 @@
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
-        </ul>
+            <li>
+                Removing Outliers and Zero-Change Points
+              <ul>
+                <li>Score: -1.5</li>
+                <li>I removed certain states from the pro-life plot where points were outliers as well as points where there was no change in amount of clinics. Doing this reduced noise in my visualization, but it also allowed me to remove contradictory data. This allowed my trends to appear more clean and have slopes that more strongly supported the argument. I tried leaving them in, but they resulted in weaker/messier trend lines.</li>
+              </ul>
+            </li>
+            <li>Faceting by Policy Stance
+                <ul>
+                    <li>Score: -1.5</li>
+                    <li>I grouped the states as either 'Pro-life' or 'Pro-choice'. This subtly introduces bias since I had control over which states were included in each group. Since there is no offical labeling of states as pro-life/choice, I would group the states typically seen as pro-life with the data that most strongly represented the argument together. I attempted having equal amounts of states in each group, but it just led to my correlations being weak. Doing this also guides viewers to thinking that “policy stance” is the primary explanatory factor of abortion rates.</li>
+                </ul>
+            </li>
+            <li>Emphasizing Trendlines
+                <ul>
+                    <li>Score: -1</li>
+                    <li> The use of OLS trendlines across each facet visually reinforces a correlation. This forces the idea upon viewers that clinic closures are statistically linked to abortion rate decreases. With filtered and reduced data, these lines appear stronger than they likely are in the full dataset, allowing me to imply causality or stronger relationships than justified. The trendlines can draw viewers in, but overstates the legitamacy of the data. I considered leaving them out entirely, but doing that decreased its influence.</li>
+                </ul>
+            </li>
+            <li>Decreasing the Width of the Plot
+                <ul>
+                    <li>Score: -1.5</li>
+                    <li>This plot has two trendlines that are crucial to the argument against the proposition. By decreasing the width of the plots, the line on the left with a larger slope appears steeper and the line on the right with a smaller slope remains significantly flatter. Doing this makes the visualization more aestheically pleasing and also gives viewers a clearer perspective on what the argument of this visualization is. I also tried to manipulate the height of the plots to be taller, but found that it changed the spacing between the points and made my data look more sparse.</li>
+                </ul>
+            </li>
+          </ul>
       </section>
 
       <section>
         <h2>Final Reflection</h2>
 
-        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+        <p>
+            Both of these visualizations really challenged me to think about the ethics of persuasion and how easily data could be manipulated in order to convey a message without being dishonest. Personally, I don’t think there was really a step in this process that I found the most straightforward. I found it quite difficult to use the same dataset in order to convey two opposing messages. It was hard for me to find patterns and ideas to use to develop a proposition. I made various plots in an attempt to identify strong trends, but ended up not being able to do that without first manipulating the data. But from there, I was able to strategically make visualizations using patterns that I noticed in the data that supported each argument.
+        </p>
+        <p>
+            Something that surprised me the most was how small changes in the design of the visualization could make such a big impact. At one point, I was removing a single outlier from my data, and it ended up changing the slope of my trendline from not supporting one of my arguments at all, to completely supporting it. I also found it surprising that deceptive choices did not mean that I had to involve major manipulation, but instead could mean subtle changes that imply a certain message.
+        </p>
+        <p>
+            Now, after completing this project, I would define “ethical analysis and visualization” as ensuring that data processing and design decisions convey the truth clearly throughout the entire process. I don’t think that there are any explicit lines that could be drawn to distinguish “acceptable” persuasive choices vs. “misleading” ones, but I do think that it is important to make sure that your own intentions and interpretations do not impact the truth of the data. If a design decision were to cause misinterpretation of what the patterns of a dataset convey, then that could be used as a sign of a misleading design choice. However, I do also think that if a design decision were to amplify the trend or message of a dataset, it is ethical and acceptable in many cases. I find that to make sure a design choice is ethical, it is clear as to why its incorporation into the visualization is necessary and helpful.
+        </p>
       </section>
     </main>
   </body>
